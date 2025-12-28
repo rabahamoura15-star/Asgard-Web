@@ -31,6 +31,5 @@ def main(page: ft.Page):
         page.add(ft.Text(f"Error: {e}", color="red"))
         page.update()
 
-if __name__ == "__main__":
-    # هذا السطر هو الحل السحري
-    ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=int(os.getenv("PORT", 8080)), host="0.0.0.0")
+# هذا هو التغيير الجذري: تصدير التطبيق لمحرك Uvicorn
+app = ft.app(target=main, view=ft.AppView.WEB_BROWSER, export_asgi_app=True)

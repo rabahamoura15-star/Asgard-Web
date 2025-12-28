@@ -2,3 +2,4 @@ flet
 requests
 supabase
 python-dotenv
+uvicorn
